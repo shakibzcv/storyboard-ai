@@ -33,7 +33,7 @@ export const auth = betterAuth({
         // Use Resend to send the password reset email
         const { error } = await resend.emails.send({
           // Set sender address
-          from: "Storyboard <noreply@ichshakib.site>",
+          from: "Storyboard <noreply@shakibzcv.site>",
           // Set recipient from the configured user object
           to: user.email,
           // Set subject line of the email
@@ -82,7 +82,7 @@ export const auth = betterAuth({
         // Dispatch the email using Resend
         await resend.emails.send({
           // Authorized sender domain
-          from: "Storyboard <noreply@ichshakib.site>",
+          from: "Storyboard <noreply@shakibzcv.site>",
           // Delivery target
           to: user.email,
           // Email subject

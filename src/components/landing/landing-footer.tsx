@@ -37,7 +37,7 @@ export function LandingFooter() {
       links: [
         {
           label: "Documentation",
-          href: "https://github.com/ichshakib/storyboard-create-your-story",
+          href: "https://github.com/shakibzcv/storyboard-ai",
         },
         { label: "Prompt Guide", href: "#how-it-works" },
         { label: "Storyset Vector Library", href: "/templates" },
@@ -52,18 +52,18 @@ export function LandingFooter() {
         { label: "About Storyboard", href: "/" },
         {
           label: "GitHub Repository",
-          href: "https://github.com/ichshakib/storyboard-create-your-story",
+          href: "https://github.com/shakibzcv/storyboard-ai",
         },
         {
           label: "Contributing Guide",
-          href: "https://github.com/ichshakib/storyboard-create-your-story/blob/main/CONTRIBUTING.md",
+          href: "https://github.com/shakibzcv/storyboard-ai/blob/main/CONTRIBUTING.md",
         },
         {
           label: "Code of Conduct",
-          href: "https://github.com/ichshakib/storyboard-create-your-story/blob/main/CODE_OF_CONDUCT.md",
+          href: "https://github.com/shakibzcv/storyboard-ai/blob/main/CODE_OF_CONDUCT.md",
         },
         { label: "Security", href: "#" },
-        { label: "Contact Support", href: "mailto:support@storyboard.local" },
+        { label: "Contact Support", href: "mailto:shakibzcv@gmail.com" },
       ],
     },
     {
@@ -74,7 +74,7 @@ export function LandingFooter() {
         { label: "Cookie Policy", href: "#" },
         {
           label: "MIT License",
-          href: "https://github.com/ichshakib/storyboard-create-your-story/blob/main/LICENSE",
+          href: "https://github.com/shakibzcv/storyboard-ai/blob/main/LICENSE",
         },
       ],
     },
@@ -113,7 +113,7 @@ export function LandingFooter() {
             {/* Social Icons */}
             <div className="text-muted-foreground flex items-center gap-3 pt-2">
               <a
-                href="https://github.com/ichshakib/storyboard-create-your-story"
+                href="https://github.com/shakibzcv/storyboard-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-foreground hover:bg-muted border-border flex h-8 w-8 items-center justify-center rounded-lg border transition-colors"
