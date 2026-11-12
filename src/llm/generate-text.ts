@@ -1,0 +1,49 @@
+import { ai } from "./client"
+import { CHAT_MODEL } from "./constants"
+import { GenerateTextOptions } from "./types"
+import { Content } from "@google/genai"
+
+/**
+ * Generates text using Google GenAI through the official SDK.
+ * Simplified version without tool-calling support as requested.
+ *
+ * @param options - messages, temperature, maxTokens, etc.
+ * @returns Object containing the generated text.
+ */
+export const generateText = async (options: GenerateTextOptions) => {
+  const { messages, temperature = 1.0, maxTokens, abortSignal } = options
+
+  if (abortSignal?.aborted) {
+    throw new Error("AbortError")
+  }
+
+  // Gemini 3 Interaction Pattern
+  const systemMessage = messages.find((m) => m.role === "system")
+  const systemInstruction = systemMessage ? systemMessage.content : undefined
+  const chatHistory = messages.filter((m) => m.role !== "system")
+
+  const lastMessage = chatHistory[chatHistory.length - 1]
+  const input = lastMessage ? lastMessage.content : ""
+
+  const history: Content[] = chatHistory.slice(0, -1).map((msg) => ({
+    role: msg.role === "assistant" ? "model" : "user",
+    parts: [{ text: msg.content }],
+  }))
+
+  const chat = ai.chats.create({
+    model: CHAT_MODEL,
+    history: history,
+    config: {
+      systemInstruction: systemInstruction,
+      temperature,
+      maxOutputTokens: maxTokens,
+    },
+  })
+
+  const response = await chat.sendMessage({ message: input })
+
+  return {
+    text: response.text || "",
+    finishReason: "STOP",
+  }
+}
